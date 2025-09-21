@@ -69,12 +69,11 @@
         }
 
         .album {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
             padding: 2rem;
-            max-width: 1200px;
-            margin: auto;
         }
 
         .photo-card {
@@ -83,10 +82,8 @@
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
-        }
-
-        .photo-card:hover {
-            transform: translateY(-5px);
+            max-width: 350px;
+            width: 100%;
         }
 
         .photo-card img {
@@ -102,6 +99,35 @@
             color: #5d4037;
         }
 
+        .nav-buttons {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .nav-buttons button {
+            padding: 0.7rem 1.5rem;
+            font-size: 1rem;
+            background: #ffd54f;
+            color: #4e342e;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: background 0.2s;
+        }
+
+        .nav-buttons button:disabled {
+            background: #fffde7;
+            color: #bdbdbd;
+            cursor: not-allowed;
+        }
+
+        .nav-buttons button:hover:not(:disabled) {
+            background: #ffecb3;
+        }
+
         footer {
             margin-top: 2rem;
             padding: 1rem;
@@ -114,6 +140,65 @@
         function hideHomePage() {
             document.getElementById('home-page').style.display = 'none';
         }
+
+        // Fotos y mensajes
+        const photos = [
+            {
+                src: "images/flores1.jpg",
+                alt: "Yellow Flowers 1",
+                msg: "Empezando con un un recuerdito de cómo empezamos hablando."
+            },
+            {
+                src: "images/flores2.jpg",
+                alt: "Yellow Flowers 2",
+                msg: "Y de la vez de nos vimos por primera vez (Estaba muy nervioso)."
+            },
+            {
+                src: "images/flores3.jpg",
+                alt: "Yellow Flowers 3",
+                msg: "jeje x2"
+            },
+            {
+                src: "images/flores4.jpg",
+                alt: "Yellow Flowers 4",
+                msg: "Te amo muchísimo, mi princesita. Quiero estar contigo el resto de mi vida."
+            },
+            {
+                src: "images/flores5.jpg",
+                alt: "Yellow Flowers 5",
+                msg: "jeje x3 (Nos casamos?)"
+            }
+        ];
+
+        let current = 0;
+
+        function showPhoto(idx) {
+            const card = document.getElementById('photo-card');
+            card.innerHTML = `
+                <img src="${photos[idx].src}" alt="${photos[idx].alt}">
+                <div class="message">"${photos[idx].msg}"</div>
+            `;
+            document.getElementById('prevBtn').disabled = idx === 0;
+            document.getElementById('nextBtn').disabled = idx === photos.length - 1;
+        }
+
+        function nextPhoto() {
+            if (current < photos.length - 1) {
+                current++;
+                showPhoto(current);
+            }
+        }
+
+        function prevPhoto() {
+            if (current > 0) {
+                current--;
+                showPhoto(current);
+            }
+        }
+
+        window.onload = function() {
+            showPhoto(current);
+        };
     </script>
 </head>
 
@@ -122,7 +207,7 @@
         <h1>Feliz día, mi amorcito ^^</h1>
         <p>Te amo muchísimo.<br>
         Espero que este detallito te saque una sonrisa.<br></p>
-        <button onclick="hideHomePage()">Flores</button>
+        <button onclick="hideHomePage()">JEJE</button>
     </div>
 
     <header>
@@ -130,31 +215,14 @@
     </header>
 
     <section class="album">
-        <div class="photo-card">
-            <img src="images/flores1.jpg" alt="Yellow Flowers 1">
-            <div class="message">"Con un recuerdito de cómo empecé a hacer videollamadas."</div>
-        </div>
-
-        <div class="photo-card">
-            <img src="images/flores2.jpg" alt="Yellow Flowers 2">
-            <div class="message">"Y de la vez de nos vimos por primera vez (Estaba muy nervioso)."</div>
-        </div>
-
-        <div class="photo-card">
-            <img src="images/flores3.jpg" alt="Yellow Flowers 3">
-            <div class="message">"jeje"</div>
-        </div>
-
-        <div class="photo-card">
-            <img src="images/flores4.jpg" alt="Yellow Flowers 4">
-            <div class="message">"Te amo muchísimo, mi princesita."</div>
-        </div>
-
-        <div class="photo-card">
-            <img src="images/flores5.jpg" alt="Yellow Flowers 5">
-            <div class="message">"jeje x2 (Nos casamos?)"</div>
+        <div class="photo-card" id="photo-card">
+            <!-- La foto y mensaje se insertan por JS -->
         </div>
     </section>
+    <div class="nav-buttons">
+        <button id="prevBtn" onclick="prevPhoto()">Anterior</button>
+        <button id="nextBtn" onclick="nextPhoto()">Siguiente</button>
+    </div>
 
     <footer>
         Lamento no saber enviar dinero a Perú para que te den florcitas de verdad
