@@ -178,8 +178,16 @@
                 <img src="${photos[idx].src}" alt="${photos[idx].alt}">
                 <div class="message">"${photos[idx].msg}"</div>
             `;
-            document.getElementById('prevBtn').disabled = idx === 0;
-            document.getElementById('nextBtn').disabled = idx === photos.length - 1;
+            document.getElementById('prevBtn').style.display = idx === 0 ? 'inline-block' : 'inline-block';
+            const nextBtn = document.getElementById('nextBtn');
+            const whoopsMsg = document.getElementById('whoops-msg');
+            if (idx === photos.length - 1) {
+                nextBtn.style.display = 'none';
+                whoopsMsg.style.display = 'block';
+            } else {
+                nextBtn.style.display = 'inline-block';
+                whoopsMsg.style.display = 'none';
+            }
         }
 
         function nextPhoto() {
@@ -222,6 +230,7 @@
     <div class="nav-buttons">
         <button id="prevBtn" onclick="prevPhoto()">Anterior</button>
         <button id="nextBtn" onclick="nextPhoto()">Siguiente</button>
+        <span id="whoops-msg" style="display:none; font-size:1.1rem; color:#5d4037; margin-left:1rem;">whoops ya no hay más</span>
     </div>
 
     <footer>
