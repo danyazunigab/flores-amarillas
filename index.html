@@ -19,6 +19,46 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        .home-page {
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 253, 231, 0.98);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .home-page h1 {
+            font-size: 2.5rem;
+            color: #ffd54f;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 8px #5d4037;
+        }
+
+        .home-page p {
+            font-size: 1.3rem;
+            color: #5d4037;
+            margin-bottom: 2rem;
+        }
+
+        .home-page button {
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            background: #ffd54f;
+            color: #4e342e;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: background 0.2s;
+        }
+
+        .home-page button:hover {
+            background: #ffecb3;
+        }
+
         header {
             background: #ffd54f;
             padding: 1.5rem;
@@ -70,9 +110,21 @@
             font-size: 0.9rem;
         }
     </style>
+    <script>
+        function hideHomePage() {
+            document.getElementById('home-page').style.display = 'none';
+        }
+    </script>
 </head>
 
 <body>
+    <div class="home-page" id="home-page">
+        <h1>Feliz día, mi amorcito ^^</h1>
+        <p>Te amo muchísimo.<br>
+        Espero que este detallito te saque una sonrisa.<br></p>
+        <button onclick="hideHomePage()">Flores</button>
+    </div>
+
     <header>
         Hola, mi princesa hermosa. Te amooooooooooooooooooooo.
     </header>
