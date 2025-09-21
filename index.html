@@ -1,104 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>No recuerdo por qué se hace esto</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #fffbea;
-      color: #333;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flores amarillas</title>
+    <style>
+        body {
+            margin: 0;
+            background: #fffbea;
+            color: #333;
+            text-align: center;
+            background-image: url('images/pattern.jpg');
+            /* tu patrón local */
+            background-repeat: repeat;
+            background-size: 40px;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    header {
-      background: #ffd54f;
-      padding: 1.5rem;
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #4e342e;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+        header {
+            background: #ffd54f;
+            padding: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #4e342e;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
 
-    .album {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
+        .album {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-    .photo-card {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
+        .photo-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
 
-    .photo-card:hover {
-      transform: translateY(-5px);
-    }
+        .photo-card:hover {
+            transform: translateY(-5px);
+        }
 
-    .photo-card img {
-      width: 100%;
-      display: block;
-    }
+        .photo-card img {
+            width: 100%;
+            display: block;
+        }
 
-    .message {
-      padding: 1rem;
-      font-style: italic;
-      font-size: 1rem;
-      background: #fffde7;
-      color: #5d4037;
-    }
+        .message {
+            padding: 1rem;
+            font-style: italic;
+            font-size: 1rem;
+            background: #fffde7;
+            color: #5d4037;
+        }
 
-    footer {
-      margin-top: 2rem;
-      padding: 1rem;
-      background: #ffecb3;
-      color: #5d4037;
-      font-size: 0.9rem;
-    }
-  </style>
+        footer {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #ffecb3;
+            color: #5d4037;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    Pero acá están tus florcitas amarillas
-  </header>
+    <header>
+        Hola, mi princesa hermosa. Te amooooooooooooooooooooo.
+    </header>
 
-  <section class="album">
-    <div class="photo-card">
-      <img src="images/flores1.jpg" alt="Yellow Flowers 1">
-      <div class="message">"Con un recuerdito de cómo empecé a hacer videollamadas."</div>
-    </div>
+    <section class="album">
+        <div class="photo-card">
+            <img src="images/flores1.jpg" alt="Yellow Flowers 1">
+            <div class="message">"Con un recuerdito de cómo empecé a hacer videollamadas."</div>
+        </div>
 
-    <div class="photo-card">
-      <img src="images/flores2.jpg" alt="Yellow Flowers 2">
-      <div class="message">"Y de la vez de nos vimos por primera vez (Estaba muy nervioso)."</div>
-    </div>
+        <div class="photo-card">
+            <img src="images/flores2.jpg" alt="Yellow Flowers 2">
+            <div class="message">"Y de la vez de nos vimos por primera vez (Estaba muy nervioso)."</div>
+        </div>
 
-    <div class="photo-card">
-      <img src="images/flores3.jpg" alt="Yellow Flowers 3">
-      <div class="message">"jeje"</div>
-    </div>
+        <div class="photo-card">
+            <img src="images/flores3.jpg" alt="Yellow Flowers 3">
+            <div class="message">"jeje"</div>
+        </div>
 
-    <div class="photo-card">
-      <img src="images/flores4.jpg" alt="Yellow Flowers 4">
-      <div class="message">"Te amo muchísimo, mi princesita."</div>
-    </div>
+        <div class="photo-card">
+            <img src="images/flores4.heic" alt="Yellow Flowers 4">
+            <div class="message">"Te amo muchísimo, mi princesita."</div>
+        </div>
 
-    <div class="photo-card">
-      <img src="images/flores5.jpg" alt="Yellow Flowers 5">
-      <div class="message">"jeje x2 (Nos casamos?)"</div>
-    </div>
-  </section>
+        <div class="photo-card">
+            <img src="images/flores5.heic" alt="Yellow Flowers 5">
+            <div class="message">"jeje x2 (Nos casamos?)"</div>
+        </div>
+    </section>
 
-  <footer>
-    Lamento no saber enviar dinero a Perú para que te den florcitas de verdad
-  </footer>
+    <footer>
+        Lamento no saber enviar dinero a Perú para que te den florcitas de verdad
+    </footer>
 </body>
+
 </html>
